@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria & João - Nosso Casamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Maria & João</h1>
+            <h2>Vamos nos casar!</h2>
+            <div class="date-banner">
+                <strong>15 de Dezembro de 2024</strong>
+            </div>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Dias</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div style="font-size: 2rem;">↓</div>
+            <div style="opacity: 0.7;">Role para baixo</div>
+        </div>
+    </section>
+
+    <!-- Nossa História -->
+    <section class="section love-story">
+        <h3>Nossa História</h3>
+        <p>
+            Nos conhecemos em 2018 durante um curso de fotografia. O que começou como uma amizade 
+            floresceu em um amor verdadeiro e profundo. Depois de 6 anos juntos, decidimos dar 
+            o próximo passo em nossa jornada.
+        </p>
+        <p>
+            Será um prazer imenso compartilhar este momento especial com você, que faz parte 
+            da nossa história e é tão importante em nossas vidas.
+        </p>
+    </section>
+
+    <!-- Detalhes do Evento -->
+    <section class="section">
+        <h3>Detalhes do Evento</h3>
+        <div class="details-grid">
+            <div class="detail-card">
+                <div class="detail-icon">⛪</div>
+                <h4>Cerimônia</h4>
+                <p><strong>15:00h</strong><br>
+                Igreja São Francisco<br>
+                Rua das Flores, 123<br>
+                Centro, Curitiba - PR</p>
+                <a href="https://maps.google.com/?q=Igreja+São+Francisco,+Rua+das+Flores+123,+Centro,+Curitiba,+PR" 
+                   target="_blank" class="map-link">
+                    📍 Ver no Maps
+                </a>
+            </div>
+            
+            <div class="detail-card">
+                <div class="detail-icon">🎉</div>
+                <h4>Recepção</h4>
+                <p><strong>17:00h</strong><br>
+                Espaço Jardim Encantado<br>
+                Av. das Palmeiras, 456<br>
+                Batel, Curitiba - PR</p>
+                <a href="https://maps.google.com/?q=Espaço+Jardim+Encantado,+Av+das+Palmeiras+456,+Batel,+Curitiba,+PR" 
+                   target="_blank" class="map-link">
+                    📍 Ver no Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section rsvp-section">
+        <h3 style="color: white;">Confirme sua Presença</h3>
+        <div class="rsvp-form">
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Telefone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Mensagem para os Noivos</label>
+                    <textarea id="message" name="message" placeholder="Deixe uma mensagem carinhosa para nós!"></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Confirmar Presença</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Lista de Presentes -->
+    <section class="section gift-section">
+        <h3>Lista de Presentes</h3>
+        <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: #666;">
+            Sua presença já é o nosso maior presente! Mas se desejar nos presentear, 
+            estas são algumas sugestões:
+        </p>
+        
+        <div class="gift-options">
+            <div class="gift-card">
+                <h4>🏠 Casa & Decoração</h4>
+                <p>Itens para nosso novo lar<br>
+                <strong>Loja Americana</strong><br>
+                Lista: #123456</p>
+            </div>
+            
+            <div class="gift-card">
+                <h4>✈️ Lua de Mel</h4>
+                <p>Contribua para nossa viagem dos sonhos<br>
+                <strong>PIX:</strong> casamento@email.com</p>
+            </div>
+            
+            <div class="gift-card">
+                <h4>🎁 Presentes Online</h4>
+                <p>Lista completa na internet<br>
+                <strong>Site:</strong> www.listaonline.com.br/maria-joao</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h3 style="color: white;">Até logo!</h3>
+        <p>Mal podemos esperar para celebrar com você!</p>
+        <p style="margin-top: 1rem;">
+            <strong>Dúvidas?</strong> Entre em contato:<br>
+            Maria: (41) 99999-1234 | João: (41) 99999-5678<br>
+            E-mail: contato@mariajoao.com.br
+        </p>
+        
+        <div class="social-links">
+            <a href="#">📸</a>
+            <a href="#">💌</a>
+            <a href="#">📱</a>
+        </div>
+        
+        <p style="margin-top: 2rem; opacity: 0.7; font-size: 0.9rem;">
+            Feito com ♥ para Maria & João
+        </p>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const weddingDate = new Date("2024-12-15T15:00:00").getTime();
+            const now = new Date().getTime();
+            const difference = weddingDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.getElementById('countdown').innerHTML = '<div class="countdown-item"><span class="countdown-number">♥</span><span class="countdown-label">Casamos!</span></div>';
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // RSVP Form Handler
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Coleta os dados do formulário
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Prepara os dados para envio
+            const emailData = {
+                to: 'brunoguerreiro.campos@hotmail.com',
+                subject: `RSVP Casamento - ${data.name}`,
+                body: `
+                    NOVA CONFIRMAÇÃO DE PRESENÇA
+                    
+                    Nome: ${data.name}
+                    E-mail: ${data.email}
+                    Telefone: ${data.phone}
+                    Mensagem: ${data.message || 'Nenhuma mensagem'}
+                    
+                    Data da confirmação: ${new Date().toLocaleString('pt-BR')}
+                `
+            };
+            
+            // Simula envio (em produção, você integraria com um serviço real)
+            console.log('RSVP Data para:', emailData.to, emailData);
+            
+            // Abre o cliente de email padrão com os dados preenchidos
+            const mailtoLink = `mailto:brunoguerreiro.campos@hotmail.com?subject=RSVP Casamento - ${encodeURIComponent(data.name)}&body=${encodeURIComponent(
+                `NOVA CONFIRMAÇÃO DE PRESENÇA\n\n` +
+                `Nome: ${data.name}\n` +
+                `E-mail: ${data.email}\n` +
+                `Telefone: ${data.phone}\n` +
+                `Mensagem: ${data.message || 'Nenhuma mensagem'}\n\n` +
+                `Data da confirmação: ${new Date().toLocaleString('pt-BR')}`
+            )}`;
+            
+            // Abre o cliente de email
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Obrigado! Sua confirmação será enviada por email. Mal podemos esperar para vê-lo(a) no nosso grande dia! ♥');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scrolling for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

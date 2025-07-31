@@ -1,0 +1,628 @@
+@charset "UTF-8";
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            /* OPÇÃO 1: Imagem personalizada com overlay */
+            background: 
+                linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+                url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            
+            /* OPÇÃO 2: Padrão floral elegante */
+            /* background: 
+                linear-gradient(rgba(255, 255, 255, 0.9), rgba(248, 249, 255, 0.9)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="florals" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M12.5,5 Q8,8 12.5,12.5 Q17,8 12.5,5 M5,12.5 Q8,8 12.5,12.5 Q8,17 5,12.5 M12.5,20 Q17,17 12.5,12.5 Q8,17 12.5,20 M20,12.5 Q17,17 12.5,12.5 Q17,8 20,12.5" fill="none" stroke="rgba(102,126,234,0.3)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23florals)"/></svg>'); */
+            
+            /* OPÇÃO 3: Textura de papel vintage */
+            /* background: 
+                linear-gradient(135deg, rgba(245, 245, 245, 0.95) 0%, rgba(250, 248, 246, 0.95) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><filter id="noise"><feTurbulence baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0.9 0 0 0 0 0.9 0 0 0 0 0.9 0 0 0 0.3 0"/></filter><rect width="100%" height="100%" filter="url(%23noise)"/></svg>'); */
+            
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        /* ========================================
+           🎨 OPÇÕES DE BACKGROUND - ESCOLHA UMA!
+           ======================================== */
+
+        /* 
+        💡 COMO USAR SUAS PRÓPRIAS IMAGENS:
+        
+        1. Para imagem local:
+           background: url('caminho/para/sua/imagem.jpg');
+        
+        2. Para imagem online:
+           background: url('https://link-da-sua-imagem.jpg');
+        
+        3. Para múltiplas camadas:
+           background: 
+               linear-gradient(overlay),
+               url('sua-imagem.jpg');
+        */
+
+        /* TEMPLATES PRONTOS PARA USAR: */
+
+        /* 🌸 TEMA ROMÂNTICO ROSÉ
+        .hero {
+            background: 
+                linear-gradient(rgba(255, 182, 193, 0.8), rgba(255, 105, 180, 0.8)),
+                url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        */
+
+        /* 🌿 TEMA JARDIM NATURAL
+        .hero {
+            background: 
+                linear-gradient(rgba(34, 139, 34, 0.7), rgba(85, 107, 47, 0.7)),
+                url('https://images.unsplash.com/photo-1464822759844-d150ad6d1199?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        */
+
+        /* ☁️ TEMA CÉU DOURADO
+        .hero {
+            background: 
+                linear-gradient(rgba(255, 215, 0, 0.6), rgba(255, 140, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        */
+
+        /* 🏖️ TEMA PRAIA SUNSET
+        .hero {
+            background: 
+                linear-gradient(rgba(255, 94, 77, 0.7), rgba(255, 154, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        */
+
+        /* 🏰 TEMA VINTAGE ELEGANTE
+        .hero {
+            background: 
+                linear-gradient(rgba(139, 69, 19, 0.8), rgba(160, 82, 45, 0.8)),
+                url('https://images.unsplash.com/photo-1520637836862-4d197d17c735?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        */
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-100px); }
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .date-banner {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .countdown {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .countdown-item {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            min-width: 80px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h3 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #667eea;
+            position: relative;
+        }
+
+        .section h3::after {
+            content: '♥';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff6b9d;
+            font-size: 1.5rem;
+        }
+
+        /* Seções com backgrounds alternativos */
+        .love-story {
+            /* OPÇÃO A: Imagem suave com overlay */
+            background: 
+                linear-gradient(rgba(248, 249, 255, 0.95), rgba(255, 245, 248, 0.95)),
+                url('https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            
+            /* OPÇÃO B: Padrão romântico */
+            /* background: 
+                linear-gradient(45deg, #f8f9ff, #fff5f8),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="hearts-bg" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M15,10 C12,7 8,10 11,13 C8,10 11,7 15,10 C19,7 22,10 19,13 C22,10 19,7 15,10" fill="rgba(255,107,157,0.05)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23hearts-bg)"/></svg>'); */
+            
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+        }
+
+        .rsvp-section {
+            /* Background com imagem para RSVP */
+            background: 
+                linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+        }
+
+        .gift-section {
+            /* Background para seção de presentes */
+            background: 
+                linear-gradient(rgba(248, 249, 255, 0.98), rgba(248, 249, 255, 0.98)),
+                url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .love-story p {
+            font-size: 1.2rem;
+            line-height: 2;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #555;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .detail-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .detail-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .detail-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .detail-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.7rem 1.2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .map-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+
+        .map-link:active {
+            transform: translateY(0);
+        }
+
+        .rsvp-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .rsvp-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .btn {
+            background: #ff6b9d;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background: #ff5a8c;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 157, 0.3);
+        }
+
+        .gift-section {
+            background: #f8f9ff;
+            text-align: center;
+        }
+
+        .gift-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gift-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gift-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .gift-card h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #667eea;
+        }
+
+        /* Tablet */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section {
+                padding: 4rem 2rem;
+            }
+            
+            .details-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+            }
+        }
+
+        /* Mobile Grande */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+            
+            .countdown {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+            
+            .countdown-item {
+                min-width: 70px;
+                padding: 0.8rem 0.5rem;
+            }
+            
+            .countdown-number {
+                font-size: 1.6rem;
+            }
+            
+            .section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .section h3 {
+                font-size: 2rem;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .rsvp-form {
+                padding: 1.5rem;
+            }
+            
+            .gift-options {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* Mobile Pequeno */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .date-banner {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .countdown {
+                gap: 0.5rem;
+            }
+            
+            .countdown-item {
+                min-width: 60px;
+                padding: 0.6rem 0.3rem;
+            }
+            
+            .countdown-number {
+                font-size: 1.3rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.7rem;
+            }
+            
+            .section {
+                padding: 2.5rem 1rem;
+            }
+            
+            .section h3 {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+            
+            .love-story p {
+                font-size: 1.1rem;
+                line-height: 1.8;
+            }
+            
+            .detail-card {
+                padding: 1.5rem;
+            }
+            
+            .detail-icon {
+                font-size: 2.5rem;
+            }
+            
+            .detail-card h4 {
+                font-size: 1.3rem;
+            }
+            
+            .rsvp-form {
+                padding: 1.2rem;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .scroll-indicator {
+                bottom: 1rem;
+            }
+            
+            .scroll-indicator div:first-child {
+                font-size: 1.5rem;
+            }
+            
+            .scroll-indicator div:last-child {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Mobile Extra Pequeno */
+        @media (max-width: 320px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .countdown-item {
+                min-width: 55px;
+            }
+            
+            .countdown-number {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 2rem 0.8rem;
+            }
+            
+            .detail-card,
+            .gift-card,
+            .rsvp-form {
+                padding: 1rem;
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
