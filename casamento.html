@@ -103,11 +103,14 @@
             <div class="form-group">
                 <label for="name">Nome Completo</label>
                 <input type="text" id="name" name="name" required>
+                <!-- Campo honeypot (não deve ser visível nem preenchido) -->
+                <input type="text" name="_gotcha" style="display:none">
+
             </div>
             
             <div class="form-group">
                 <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="_replyto" required>
             </div>
             
             <div class="form-group">
